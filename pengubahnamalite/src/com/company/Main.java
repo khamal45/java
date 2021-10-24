@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner masukan = new Scanner(System.in);
+
+            Scanner masukan = new Scanner(System.in);
 
             String kalimat = masukan.nextLine();
             String kata_asli = kalimat;
@@ -23,47 +24,46 @@ public class Main {
                 if (z.equals(" ") || z.equals("_")) {
                     System.out.println("Maaf Aplikasi ini hanya untuk 1 kata saja");
                     return;
-                }
-                else {
-                    if (z.equalsIgnoreCase("g")){
+                } else {
+                    //merubah NG
+                    if (z.equalsIgnoreCase("g")) {
                         jumlah_string_sementara = angka - 1;
                         b = kalimat.charAt(jumlah_string_sementara);
                         awal = String.valueOf(b);
-                        if (awal.equalsIgnoreCase("n")){
-                         kalimat_hasil =  kalimat_hasil + awal;
-                         angka = jumlah_string_sementara;
-                        }
-                    }
-
-                    if (z.equalsIgnoreCase("y")){
-                        jumlah_string_sementara = angka - 1;
-                        b = kalimat.charAt(jumlah_string_sementara);
-                        awal = String.valueOf(b);
-                        if (awal.equalsIgnoreCase("n")){
-                            kalimat_hasil =  kalimat_hasil + awal;
+                        if (awal.equalsIgnoreCase("n")) {
+                            kalimat_hasil = kalimat_hasil + awal;
                             angka = jumlah_string_sementara;
                         }
                     }
-                  kalimat_hasil = kalimat_hasil + z;
+                    //merubah NY
+                    if (z.equalsIgnoreCase("y")) {
+                        jumlah_string_sementara = angka - 1;
+                        b = kalimat.charAt(jumlah_string_sementara);
+                        awal = String.valueOf(b);
+                        if (awal.equalsIgnoreCase("n")) {
+                            kalimat_hasil = kalimat_hasil + awal;
+                            angka = jumlah_string_sementara;
+                        }
+                    }
+                    kalimat_hasil = kalimat_hasil + z;
 
                 }
             }
             //mencetak hasil
-            System.out.printf("Kalimat Asli : ");
+            System.out.printf("Kata Asli : ");
             System.out.println(kata_asli);
             System.out.println();
-            System.out.printf("Kalimat Hasil : ");
+            System.out.printf("Kata Hasil : ");
             System.out.println(kalimat_hasil);
             System.out.println();
 
             System.out.println("Kata Pelindrom :");
 
             //mencetak kata palindrom
-            if (kata_asli.equalsIgnoreCase(kalimat_hasil)){
+            if (kata_asli.equalsIgnoreCase(kalimat_hasil)) {
                 System.out.print(kata_asli);
                 System.out.println(" = Termasuk kata palindrom");
-            }
-            else {
+            } else {
                 System.out.print(kata_asli);
                 System.out.println(" = Bukan Termasuk kata palindrom");
             }
@@ -76,4 +76,4 @@ public class Main {
 
 
 
-    
+
