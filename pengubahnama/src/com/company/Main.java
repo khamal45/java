@@ -14,7 +14,11 @@ import java.util.Scanner;
 
 //4. Sangat sedikit bug karena sudah saya uji 'khamal:2021'
 
-
+//update
+//24-10-2021
+//mengurangi kode yang tidak perlu
+// before : (baris = 352)
+// after  : (baris = 251)
 public class Main {
     public static void main(String[] args) {
         Scanner masukan = new Scanner(System.in);
@@ -97,7 +101,7 @@ public class Main {
                                 i -= 1;
                             }
                         }
-
+                        if (i == jumlah_string_sementara - 1){
                         //mengecek apakah ada simbol di akhir kata
                         switch (z) {
                             case "?":
@@ -120,7 +124,7 @@ public class Main {
                                 i -= 1;
                                 b = kalimat.charAt(i);
                                 break;
-
+                        }
                         }
 
 
@@ -132,13 +136,15 @@ public class Main {
                     }
                     //menyimpan kata palindrom di dalam string
                     kata_palindrom = kata_palindrom + kata_awal;
+
+
+
                     if (kata_awal.equalsIgnoreCase(kata_rubah)) {
                         kata_palindrom = kata_palindrom + "!";
                     } else {
                         kata_palindrom = kata_palindrom + ".";
                     }
                     //menambah kan simbol dan spasi/_
-
                     kalimat_hasil = kalimat_hasil + simbol + d;
 
                     awal = "";
@@ -150,116 +156,9 @@ public class Main {
                 }
             }
 
-            //mengecek apakah ada simbol di awal
 
-            int cek = jumlah_string_sementara1;
-            a = kalimat.charAt(cek);
-            z = String.valueOf(a);
-            if (z.equals("@")) {
-                awal = "@";
-                kalimat_hasil = kalimat_hasil + awal;
-                jumlah_string_sementara1 += 1;
-            }
-            //mengecek kata awal untuk memastikan palindrom
-
-            for (int x = jumlah_string_sementara1; x < angka; x++) {
-                a = kalimat.charAt(x);
-                z = String.valueOf(a);
-                //memisahkan kata dari simbol
-                if (z.equals("@") || z.equals("?") || z.equals(".") || z.equals("!") || z.equals("$")) {
-
-                } else {
-                    kata_awal = kata_awal + a;
-
-                }
-
-            }
-
-            //membalik kata
-            for (int j = jumlah_string - 1; j >= jumlah_string_sementara; j--) {
-
-
-                jumlah_string_sementara = angka;
-                for (int i = jumlah_string_sementara - 1; i >= jumlah_string_sementara1; i--) {
-                    b = kalimat.charAt(i);
-                    z = String.valueOf(b);
-
-                    //pengecekan NG
-                    if (z.equalsIgnoreCase("g")) {
-                        int a1 = i - 1;
-                        char b1 = kalimat.charAt(a1);
-                        String z1 = String.valueOf(b1);
-                        if (z1.equalsIgnoreCase("n")) {
-
-
-                            //memasuakn nilai n ke dalam string terlebih dulu
-                            kalimat_hasil = kalimat_hasil + z1;
-                            i -= 1;
-                        }
-                    }
-                    //pengecekan NY
-                    if (z.equalsIgnoreCase("y")) {
-                        int a1 = i - 1;
-                        char b1 = kalimat.charAt(a1);
-                        String z1 = String.valueOf(b1);
-                        if (z1.equalsIgnoreCase("n")) {
-
-
-                            //memasuakn nilai n ke dalam string terlebih dulu
-                            kalimat_hasil = kalimat_hasil + z1;
-                            i -= 1;
-                        }
-                    }
-
-                    //mengecek apakah ada simbol di akhir kata
-                    switch (z) {
-                        case "?":
-                            simbol = "?";
-                            i -= 1;
-                            b = kalimat.charAt(i);
-                            break;
-                        case ".":
-                            simbol = ".";
-                            i -= 1;
-                            b = kalimat.charAt(i);
-                            break;
-                        case "!":
-                            simbol = "!";
-                            i -= 1;
-                            b = kalimat.charAt(i);
-                            break;
-                        case "$":
-                            simbol = "$";
-                            i -= 1;
-                            b = kalimat.charAt(i);
-                            break;
-
-                    }
-
-
-                    //memasukan karakter ke dalam string
-                    kalimat_hasil = kalimat_hasil + b;
-                    kata_rubah = kata_rubah + b;
-
-                }
-
-                //menambah kan simbol dan spasi/_
-                String d = " ";
-                kalimat_hasil = kalimat_hasil + simbol + d;
-
-                awal = "";
-                simbol = "";
-                jumlah_string_sementara1 = jumlah_string_sementara + 1;
-                awal = "";
-            }
-            //memasukan kata palindrom
-            kata_palindrom = kata_palindrom + kata_awal;
-            if (kata_awal.equalsIgnoreCase(kata_rubah)) {
-                kata_palindrom = kata_palindrom + "!";
-            } else {
-                kata_palindrom = kata_palindrom + ".";
-            }
-            for (int r = 0;r < jumlah_string-1;r++){
+           //menghilangkan @ di akhir kalimat
+            for (int r = 0;r < jumlah_string-2;r++){
                 b = kalimat_hasil.charAt(r);
                 kalimat_hasil1 = kalimat_hasil1 + b;
             }
