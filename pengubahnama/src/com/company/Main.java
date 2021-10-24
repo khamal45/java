@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 //update
 //24-10-2021
-//mengurangi kode yang tidak perlu
+//mengurangi kode yang tidak perlu dan bug dalam beberap simbol
 // before : (baris = 352)
 // after  : (baris = 251)
 public class Main {
