@@ -10,10 +10,12 @@ public class Soalno1 {
         System.out.printf("Masukan kata : ");
     String kata = input.nextLine();
         System.out.println();
-    for (int i = kata.length() - 1 ;  i>=0 ; i--){
-        hasil = hasil + kata.charAt(i);
-    }
         System.out.printf("Hasil Balik kata : ");
-        System.out.println(hasil);
+
+    for (int i = kata.length() - 1 ;  i>=0 ; i--){
+        System.out.print(kata.substring(i,i+1));
+    }
+
+        System.out.println();
     }
 }
