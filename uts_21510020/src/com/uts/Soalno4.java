@@ -24,7 +24,6 @@ public class Soalno4 {
 
             System.out.println();
         }
-        System.out.printf("  ");
 
     }
 }
